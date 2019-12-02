@@ -1,9 +1,9 @@
-﻿using HoloToolkit.Unity.InputModule;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Microsoft.MixedReality.Toolkit.Input;
 
-public class DoorInteraction : MonoBehaviour, IInputClickHandler
+public class DoorInteraction : MonoBehaviour, IMixedRealityPointerHandler
 {
 
     private DoorController door;
@@ -11,16 +11,6 @@ public class DoorInteraction : MonoBehaviour, IInputClickHandler
     private void Awake()
     {
         door = GetComponent<DoorController>();
-    }
-
-    public void OnInputClicked(InputClickedEventData eventData)
-    {
-        if (door == null)
-        {
-            Debug.LogError("No DoorController found on the object");
-            return;
-        }
-        door.DoorOpen = !door.DoorOpen;
     }
 
     // Use this for initialization
@@ -33,5 +23,30 @@ public class DoorInteraction : MonoBehaviour, IInputClickHandler
     void Update()
     {
 
+    }
+
+    public void OnPointerDown(MixedRealityPointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPointerDragged(MixedRealityPointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPointerUp(MixedRealityPointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPointerClicked(MixedRealityPointerEventData eventData)
+    {
+        if (door == null)
+        {
+            Debug.LogError("No DoorController found on the object");
+            return;
+        }
+        door.DoorOpen = !door.DoorOpen;
     }
 }
