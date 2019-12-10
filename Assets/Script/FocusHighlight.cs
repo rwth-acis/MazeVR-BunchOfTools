@@ -21,12 +21,6 @@ public class FocusHighlight : MonoBehaviour, IMixedRealityFocusHandler
         rend.material.color = defaultColor;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnFocusEnter(FocusEventData eventData)
     {
         rend.material.color = highlightColor;
