@@ -7,7 +7,9 @@ Maze Game for HTC VIVE
 ### Prerequisites
 
 Unity 2018.4
+
 Steam VR
+
 Mixed Reality Tool Kit for Unity
 
 ### Installing
